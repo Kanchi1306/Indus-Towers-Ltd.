@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Employee Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: linear-gradient(to right, #fce4ec, #e0f7fa);
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 30px;
+      color: #004d40;
+      text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+    }
+
+    .region {
+      max-width: 800px;
+      margin: 20px auto;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    summary {
+      font-size: 20px;
+      font-weight: bold;
+      padding: 20px;
+      cursor: pointer;
+      background: linear-gradient(to right, #80deea, #f8bbd0);
+      color: #1a237e;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    summary:hover {
+      background: linear-gradient(to right, #4dd0e1, #f06292);
+      color: white;
+    }
+
+    ul {
+      margin: 0;
+      padding: 20px 40px;
+      list-style: none;
+    }
+
+    li {
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd;
+      transition: transform 0.2s ease;
+    }
+
+    li:last-child {
+      border-bottom: none;
+    }
+
+    li:hover {
+      transform: translateX(10px);
+      color: #00796b;
+    }
+
+    .emoji {
+      font-size: 22px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📍 Indus Towers - Regional Site Dashboard</h1>
+
+  <div class="region">
+    <details>
+      <summary><span class="emoji">🧭</span> North India</summary>
+      <ul>
+        <li><a href="regions/site-viewer-delhi_central.html" target="_blank">NI-001 - Delhi Central</a></li>
+        <li><a href="regions/site-viewer-chandigarh.html" target="_blank">NI-002 - Chandigarh Hub</a></li>
+        <li><a href="regions/site-viewer-lucknow.html" target="_blank">NI-003 - Lucknow Zone</a></li>
+      </ul>
+    </details>
+  </div>
+
+  <div class="region">
+    <details>
+      <summary><span class="emoji">🌴</span> South India</summary>
+      <ul>
+        <li><a href="regions/site-viewer-bengluru.html" target="_blank">SI001 - Bengaluru Tech Park</a></li>
+        <li><a href="regions/site-viewer-chennai.html" target="_blank">SI002 - Chennai Metro</a></li>
+        <li><a href="regions/site-viewer-hyderabad.html" target="_blank">SI003 - Hydrabad Circle</a></li>
+      </ul>
+    </details>
+  </div>
+
+  <div class="region">
+    <details>
+      <summary><span class="emoji">🏙️</span> West India</summary>
+      <ul>
+        <li><a href="regions/site-viewer-mumbai.html" target="_blank">WI001 - Mumbai Central</a></li>
+        <li><a href="regions/site-viewer-pune.html" target="_blank">WIC002 - Pune City</a></li>
+        <li><a href="regions/site-viewer-ahmedabad.html" target="_blank">WI003 - Ahmededabad East </a></li>
+      </ul>
+    </details>
+  </div>
+
+  <div class="region">
+    <details>
+      <summary><span class="emoji">🌇</span> East India</summary>
+      <ul>
+        <li><a href="regions/site-viewer-kolkata.html" target="_blank">EI-001 Kolkata Core</a></li>
+        <li><a href="regions/site-viewer-patna.html" target="_blank">EI-002 Patna Central</a></li>
+        <li><a href="regions/site-viewer-bhevneswar.html" target="_blank">EI-003 Bhuvneswar Sector</a></li>
+      </ul>
+    </details>
+  </div>
+
+</body>
+</html>

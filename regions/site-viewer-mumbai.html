@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mumbai Central - Live Site Dashboard</title>
+
+  <!-- ✅ Tom Select CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/css/tom-select.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #fce4ec, #e0f7fa);
+      padding: 30px;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      color: #004d40;
+    }
+
+    .select-section, .site-info {
+      max-width: 700px;
+      margin: 20px auto;
+      background: linear-gradient(to right, #80deea, #f8bbd0);
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+
+    select {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    .info-row {
+      margin: 10px 0;
+    }
+
+    .label {
+      font-weight: bold;
+      color: #1976d2;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📍Mumbai Central - Site Dashboard</h1>
+
+  <div class="select-section">
+    <label><strong>Select a Site:</strong></label>
+    <select id="siteDropdown" placeholder="Search or select a site..."></select>
+  </div>
+
+  <div class="site-info" id="siteDetails" style="display:none;"></div>
+
+  <!-- ✅ Tom Select JS (placed at bottom so everything is ready) -->
+  <script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/js/tom-select.complete.min.js"></script>
+
+  <script>
+    const dropdown = document.getElementById('siteDropdown');
+    const details = document.getElementById('siteDetails');
+    let siteData = [];
+
+    const apiURL = "https://sheetdb.io/api/v1/wmz6p7luzgll8";
+
+    fetch(apiURL)
+      .then(res => res.json())
+      .then(data => {
+        siteData = data;
+
+        // Clear existing options
+        dropdown.innerHTML = '<option value="">-- Select a Site --</option>';
+
+        data.forEach(site => {
+          const opt = document.createElement('option');
+          opt.value = site["SITE_ID"].trim();
+          opt.textContent = `${site["SITE_ID"]} - ${site["LOCATION"]}`;
+          dropdown.appendChild(opt);
+        });
+
+        // ✅ Initialize Tom Select after dropdown is built
+        new TomSelect('#siteDropdown', {
+          placeholder: 'Search or select a site...',
+          allowEmptyOption: true,
+          maxOptions: 100
+        });
+      });
+
+    // ✅ Selection logic stays the same
+    document.addEventListener('change', function (e) {
+      if (e.target.id === 'siteDropdown') {
+        const selected = e.target.value.trim();
+        const site = siteData.find(s => s["SITE_ID"].trim() === selected);
+
+        if (site) {
+          details.innerHTML = `
+            <div class="info-row"><span class="label">Site ID:</span> ${site["SITE_ID"]}</div>
+            <div class="info-row"><span class="label">Location:</span> ${site["LOCATION"]}</div>
+            <div class="info-row"><span class="label">Region:</span> ${site["REGION"]}</div>
+            <div class="info-row"><span class="label">Power Status:</span> ${site["POWER STATUS"]}</div>
+            <div class="info-row"><span class="label">Uptime:</span> ${site["UPTIME"]}</div>
+            <div class="info-row"><span class="label">Battery Health:</span> ${site["BATTERY HEALTH"]}</div>
+            <div class="info-row"><span class="label">Energy Source:</span> ${site["ENERGY SOURCE"]}</div>
+            <div class="info-row"><span class="label">Active Alerts:</span> ${site["ACTIVE ALERTS"]}</div>
+            <div class="info-row"><span class="label">Last Maintenance:</span> ${site["LAST MAINTAINENCE"]}</div>
+          `;
+          details.style.display = "block";
+        } else {
+          details.style.display = "none";
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>

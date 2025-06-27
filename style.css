@@ -1,0 +1,221 @@
+/* ======Global Styles======*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+/* =====Header and Marque ===== */
+h1{
+    text-align: center;
+    color: #2e7d32;
+}
+marquee{
+    font-size: 18px;
+    color: #00695c;
+    padding: 10px;
+    text-shadow: 0 0 5px #00c9a7, 0 0 10px #00c9a7;
+}
+@keyframes glow {
+    from{
+        text-shadow: 0 0 5px #00c9a7;
+    }
+    to{
+        text-shadow: 0 0 20px
+    }
+    
+}
+.container {
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+}
+
+.left {
+  flex: 2;
+  padding: 10px;
+}
+
+.right {
+  flex: 1;
+  padding: 20px;
+  background: url('images/login-bg.jpg') no-repeat center center;
+  background-size: cover;
+  background-blend-mode: lighten;
+  background: linear-gradient(to left, #fce4ec, #e0f7fa);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  height: fit-content;
+  backdrop-filter: blur(6px);
+}
+
+/* ===== Section Boxes ===== */
+.section {
+  background: linear-gradient(to left, #fce4ec, #e0f7fa);
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  opacity: 10;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Headings ===== */
+h2 {
+  color: #1976d2;
+  margin-bottom: 10px;
+}
+
+ul {
+  margin-left: 20px;
+  margin-bottom: 10px;
+  line-height: 1.8;
+}
+
+/* ===== Login Form Styling ===== */
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form label {
+  margin-top: 10px;
+}
+
+.login-form input {
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-form button {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.login-form button:hover {
+  transform: scale(1.05);
+  background-color: #1b5e20;
+}
+
+/* ===== Login Page Images ===== */
+.right img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.right img:hover {
+  transform: scale(1.05);
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #e0f2f1;
+  color: #004d40;
+  margin-top: 40px;
+}
+
+/* ===== Responsive Layout ===== */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .right {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+}
+/* =====Hover Effect for Left Side Sections =====*/
+.left .section:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+
+}
+.left .section:hover {
+  box-shadow: 0 0 10px #00c9a7, 0 0 20px #00c9a7;
+  transition: all 0.3s ease;
+}
+h1 {
+  animation: slideDown 1s ease-out forwards;
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+marquee {
+  animation: fadeSlide 2s ease-out;
+}
+
+@keyframes fadeSlide {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.login-form button {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+.section {
+  animation: slideIn 1s ease forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.right img {
+  animation: float 3s ease-in-out infinite;
+}
+
+

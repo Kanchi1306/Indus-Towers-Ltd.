@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Indus Towers Project</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>INDUS TOWERS LIMITED</h1>
+  <marquee behavior="scroll" direction="left">Welcome to Indus Towers Limited - Empowering Digital India!</marquee>
+
+  <div class="container">
+    <!-- Left: Company Info -->
+    <div class="left">
+
+      <div class="section">
+        <p>
+          Indus Towers Limited is one of the world’s largest telecom tower infrastructure providers, enabling seamless mobile connectivity across India. Established in <strong>2007</strong>, the company plays a critical role in supporting India’s digital growth by offering shared passive infrastructure for wireless telecommunications.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>🌐 Key Highlights</h2>
+        <ul>
+          <li><strong>Industry:</strong> Telecom Infrastructure</li>
+          <li><strong>Founded:</strong> 2007 (Merger with Bharti Infratel in 2020)</li>
+          <li><strong>Headquarters:</strong> Gurugram, Haryana, India</li>
+          <li><strong>Presence:</strong> Over 22 telecom circles in India</li>
+          <li><strong>Total Towers:</strong> More than 185,000</li>
+          <li><strong>Tenancy Ratio:</strong> Among the highest in the industry</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>🎯 Mission & Vision</h2>
+        <p><strong>Mission:</strong> To provide best-in-class passive infrastructure and be the preferred partner to telecom service providers.</p>
+        <p><strong>Vision:</strong> To transform lives through sustainable digital connectivity, enhancing India's socio-economic development.</p>
+      </div>
+
+      <div class="section">
+        <h2>⚙️ Core Services</h2>
+        <ul>
+          <li><strong>Shared Tower Infrastructure:</strong> High-quality infrastructure shared by telecom operators</li>
+          <li><strong>Smart Energy Solutions:</strong> Green energy adoption, remote monitoring, and energy efficiency</li>
+          <li><strong>Network Uptime Management:</strong> Ensuring uninterrupted service</li>
+          <li><strong>Sustainable Operations:</strong> Focus on renewable energy and environmental care</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>🌱 Sustainability Initiatives</h2>
+        <ul>
+          <li>Use of solar power and hybrid systems</li>
+          <li>Carbon emissions reduction programs</li>
+          <li>Green Building Certifications and waste management</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>🤝 Clients</h2>
+        <ul>
+          <li>Bharti Airtel</li>
+          <li>Vodafone Idea</li>
+          <li>Reliance Jio (select circles)</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>📈 Why Indus Towers?</h2>
+        <ul>
+          <li>Industry leadership and unmatched scale</li>
+          <li>Technology-driven operational excellence</li>
+          <li>Strong focus on innovation and green energy</li>
+          <li>Robust financial and service performance</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Right: Login Form -->
+    <div class="right">
+      <h2>🔐 Employee Login</h2>
+      <form class="login-form" onsubmit="validateLogin(event)">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Login</button>
+      </form>
+
+      <div style="margin-top: 20px;">
+        <h3>📷 Our Team at Work</h3>
+        <img src="images/image1.jpeg" style="width:100%; border-radius: 8px; margin-bottom: 10px;">
+        <img src="images/image2.jpeg" alt="Indus Tower Site" style="width:100%; border-radius: 8px;">
+        <img src="images/image3.jpeg" alt="Indus Tower Site" style="width:100%; border-radius: 8px;">
+        <img src="images/image4.jpeg" alt="Indus Tower Site" style="width:100%; border-radius: 8px;">
+        
+      </div>
+    </div>
+
+  </div>
+<script>
+  function validateLogin(event) {
+    event.preventDefault(); // stop form from refreshing
+
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    // Replace with your desired credentials (for demo only)
+    const correctEmail = "admin@indus.com";
+    const correctPassword = "12345";
+
+    if (email === correctEmail && password === correctPassword) {
+      // ✅ Redirect to another webpage (like dashboard.html)
+      window.location.href = "dashboard.html";
+    } else {
+      alert("Incorrect email or password!");
+    }
+  }
+</script>
+
+</body>
+
+</html>
